@@ -41,7 +41,7 @@ This project is licensed under the terms of the MIT license.
 
 # LAB-PR-FINAL
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=SONARCLOUD_PROJECT_KEY&metric=alert_status)](https://sonarcloud.io/summary?id=SONARCLOUD_PROJECT_KEY) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=SONARCLOUD_PROJECT_KEY&metric=coverage)](https://sonarcloud.io/summary?id=SONARCLOUD_PROJECT_KEY) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=SONARCLOUD_PROJECT_KEY&metric=security_rating)](https://sonarcloud.io/summary?id=SONARCLOUD_PROJECT_KEY) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=SONARCLOUD_PROJECT_KEY&metric=sqale_rating)](https://sonarcloud.io/summary?id=SONARCLOUD_PROJECT_KEY)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ULLHHUB_LAB-PR-FINAL&metric=alert_status)](https://sonarcloud.io/summary?id=ULLHHUB_LAB-PR-FINAL) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ULLHHUB_LAB-PR-FINAL&metric=coverage)](https://sonarcloud.io/summary?id=ULLHHUB_LAB-PR-FINAL) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ULLHHUB_LAB-PR-FINAL&metric=security_rating)](https://sonarcloud.io/summary?id=ULLHHUB_LAB-PR-FINAL) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ULLHHUB_LAB-PR-FINAL&metric=sqale_rating)](https://sonarcloud.io/summary?id=ULLHHUB_LAB-PR-FINAL)
 
 Descripción breve del proyecto.
 
