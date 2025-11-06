@@ -9,8 +9,8 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>ExpositoTOP</name>
-    <description>Recomendador Turístico con Ventanas de Tiempo (RTVRPTW)</description>
+    <name>LAB-PR-FINAL</name>
+    <description>PROYECTO FINAL LAB</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
