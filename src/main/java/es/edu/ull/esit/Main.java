@@ -1,5 +1,11 @@
 package es.edu.ull.esit;
 
+import es.edu.ull.esit.algorithm.AstarAlgorithm;
+import es.edu.ull.esit.algorithm.BfsAlgorithm;
+import es.edu.ull.esit.algorithm.BidirectionalSearchAlgorithm;
+import es.edu.ull.esit.algorithm.DfsAlgorithm;
+import es.edu.ull.esit.algorithm.DijkstraAlgorithm;
+import es.edu.ull.esit.algorithm.GreedyBestFirstAlgorithm;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -156,7 +162,8 @@ public class Main extends Canvas implements Runnable, MouseListener {
 			public void actionPerformed(ActionEvent arg0) {
 				if (runTimeMain.isMazeValid()) {
 					runTimeMain.resetCosts();
-					algorithm.bfs(start, target, NODES_WIDTH,
+					algorithm.setStrategy(new BfsAlgorithm());
+					algorithm.performSearch(start, target, NODES_WIDTH,
 							NODES_HEIGHT);
 				} else {
 					System.out.println("DIDNT LAUNCH");
@@ -169,7 +176,8 @@ public class Main extends Canvas implements Runnable, MouseListener {
 			public void actionPerformed(ActionEvent arg0) {
 				if (runTimeMain.isMazeValid()) {
 					runTimeMain.resetCosts();
-					algorithm.dfs(start, target, NODES_WIDTH, NODES_HEIGHT);
+					algorithm.setStrategy(new DfsAlgorithm());
+					algorithm.performSearch(start, target, NODES_WIDTH, NODES_HEIGHT);
 				} else {
 					JOptionPane.showMessageDialog(frame, "You must have a starting and ending point.", "Invalid Maze",
 							JOptionPane.ERROR_MESSAGE);
@@ -182,7 +190,8 @@ public class Main extends Canvas implements Runnable, MouseListener {
 			public void actionPerformed(ActionEvent arg0) {
 				if (runTimeMain.isMazeValid()) {
 					runTimeMain.resetCosts();
-					algorithm.Astar(start, target, NODES_WIDTH,
+					algorithm.setStrategy(new AstarAlgorithm());
+					algorithm.performSearch(start, target, NODES_WIDTH,
 							NODES_HEIGHT);
 				} else {
 					System.out.println("DIDNT LAUNCH");
@@ -194,7 +203,8 @@ public class Main extends Canvas implements Runnable, MouseListener {
 			public void actionPerformed(ActionEvent e) {
 				if (runTimeMain.isMazeValid()) {
 					runTimeMain.resetCosts();
-					algorithm.dijkstra(start, target, NODES_WIDTH, NODES_HEIGHT);
+					algorithm.setStrategy(new DijkstraAlgorithm());
+					algorithm.performSearch(start, target, NODES_WIDTH, NODES_HEIGHT);
 				}
 			}
 		});
@@ -203,7 +213,8 @@ public class Main extends Canvas implements Runnable, MouseListener {
 			public void actionPerformed(ActionEvent e) {
 				if (runTimeMain.isMazeValid()) {
 					runTimeMain.resetCosts();
-					algorithm.greedyBestFirstSearch(start, target, NODES_WIDTH, NODES_HEIGHT);
+					algorithm.setStrategy(new GreedyBestFirstAlgorithm());
+					algorithm.performSearch(start, target, NODES_WIDTH, NODES_HEIGHT);
 				}
 			}
 		});
@@ -212,7 +223,8 @@ public class Main extends Canvas implements Runnable, MouseListener {
 			public void actionPerformed(ActionEvent e) {
 				if (runTimeMain.isMazeValid()) {
 					runTimeMain.resetCosts();
-					algorithm.bidirectionalSearch(start, target, NODES_WIDTH, NODES_HEIGHT);
+					algorithm.setStrategy(new BidirectionalSearchAlgorithm());
+					algorithm.performSearch(start, target, NODES_WIDTH, NODES_HEIGHT);
 				}
 			}
 		});
