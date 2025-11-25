@@ -1,0 +1,82 @@
+\doxysection{es.\+edu.\+ull.\+esit.\+Algorithm Class Reference}
+\hypertarget{classes_1_1edu_1_1ull_1_1esit_1_1_algorithm}{}\label{classes_1_1edu_1_1ull_1_1esit_1_1_algorithm}\index{es.edu.ull.esit.Algorithm@{es.edu.ull.esit.Algorithm}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_algorithm_aca5bc6ac5c3c05ca64e5132c3b445d3a}{set\+Strategy}} (\mbox{\hyperlink{interfacees_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_search_algorithm}{Search\+Algorithm}} strategy)
+\item 
+void \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_algorithm_ab64eee3459be3d9fe3c7261a8de6a5c7}{perform\+Search}} (\mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}} start, \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}} end, int graph\+Width, int graph\+Height)
+\item 
+int \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_algorithm_ad63ad68323fc29d4f97576daf1e1c43d}{get\+Search\+Time}} ()
+\item 
+void \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_algorithm_a611823e3a699d6ea45ebc2e928632dfc}{set\+Search\+Time}} (int searchtime)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Context class for pathfinding algorithms using the Strategy pattern. Supports DFS, BFS, A\texorpdfstring{$\ast$}{*}, Dijkstra, Greedy Best-\/\+First Search, and Bidirectional Search. Each algorithm is implemented as a separate strategy class. 
+
+\label{doc-func-members}
+\Hypertarget{classes_1_1edu_1_1ull_1_1esit_1_1_algorithm_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classes_1_1edu_1_1ull_1_1esit_1_1_algorithm_ad63ad68323fc29d4f97576daf1e1c43d}\index{es.edu.ull.esit.Algorithm@{es.edu.ull.esit.Algorithm}!getSearchTime@{getSearchTime}}
+\index{getSearchTime@{getSearchTime}!es.edu.ull.esit.Algorithm@{es.edu.ull.esit.Algorithm}}
+\doxysubsubsection{\texorpdfstring{getSearchTime()}{getSearchTime()}}
+{\footnotesize\ttfamily \label{classes_1_1edu_1_1ull_1_1esit_1_1_algorithm_ad63ad68323fc29d4f97576daf1e1c43d} 
+int es.\+edu.\+ull.\+esit.\+Algorithm.\+get\+Search\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the current search time delay in milliseconds.
+
+\begin{DoxyReturn}{Returns}
+The search time in milliseconds 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1edu_1_1ull_1_1esit_1_1_algorithm_ab64eee3459be3d9fe3c7261a8de6a5c7}\index{es.edu.ull.esit.Algorithm@{es.edu.ull.esit.Algorithm}!performSearch@{performSearch}}
+\index{performSearch@{performSearch}!es.edu.ull.esit.Algorithm@{es.edu.ull.esit.Algorithm}}
+\doxysubsubsection{\texorpdfstring{performSearch()}{performSearch()}}
+{\footnotesize\ttfamily \label{classes_1_1edu_1_1ull_1_1esit_1_1_algorithm_ab64eee3459be3d9fe3c7261a8de6a5c7} 
+void es.\+edu.\+ull.\+esit.\+Algorithm.\+perform\+Search (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}}}]{start}{, }\item[{\mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}}}]{end}{, }\item[{int}]{graph\+Width}{, }\item[{int}]{graph\+Height}{}\end{DoxyParamCaption})}
+
+Performs the search using the currently set strategy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & The starting node \\
+\hline
+{\em end} & The target/end node \\
+\hline
+{\em graph\+Width} & The width of the grid \\
+\hline
+{\em graph\+Height} & The height of the grid \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classes_1_1edu_1_1ull_1_1esit_1_1_algorithm_a611823e3a699d6ea45ebc2e928632dfc}\index{es.edu.ull.esit.Algorithm@{es.edu.ull.esit.Algorithm}!setSearchTime@{setSearchTime}}
+\index{setSearchTime@{setSearchTime}!es.edu.ull.esit.Algorithm@{es.edu.ull.esit.Algorithm}}
+\doxysubsubsection{\texorpdfstring{setSearchTime()}{setSearchTime()}}
+{\footnotesize\ttfamily \label{classes_1_1edu_1_1ull_1_1esit_1_1_algorithm_a611823e3a699d6ea45ebc2e928632dfc} 
+void es.\+edu.\+ull.\+esit.\+Algorithm.\+set\+Search\+Time (\begin{DoxyParamCaption}\item[{int}]{searchtime}{}\end{DoxyParamCaption})}
+
+Sets the search time delay for visualization. Controls the speed of the search animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em searchtime} & The search time in milliseconds \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classes_1_1edu_1_1ull_1_1esit_1_1_algorithm_aca5bc6ac5c3c05ca64e5132c3b445d3a}\index{es.edu.ull.esit.Algorithm@{es.edu.ull.esit.Algorithm}!setStrategy@{setStrategy}}
+\index{setStrategy@{setStrategy}!es.edu.ull.esit.Algorithm@{es.edu.ull.esit.Algorithm}}
+\doxysubsubsection{\texorpdfstring{setStrategy()}{setStrategy()}}
+{\footnotesize\ttfamily \label{classes_1_1edu_1_1ull_1_1esit_1_1_algorithm_aca5bc6ac5c3c05ca64e5132c3b445d3a} 
+void es.\+edu.\+ull.\+esit.\+Algorithm.\+set\+Strategy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacees_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_search_algorithm}{Search\+Algorithm}}}]{strategy}{}\end{DoxyParamCaption})}
+
+Sets the search algorithm strategy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em strategy} & The search algorithm to use \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+PR/src/main/java/es/edu/ull/esit/Algorithm.\+java\end{DoxyCompactItemize}

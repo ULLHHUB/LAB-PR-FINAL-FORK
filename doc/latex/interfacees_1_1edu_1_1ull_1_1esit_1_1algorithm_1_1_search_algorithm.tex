@@ -1,0 +1,55 @@
+\doxysection{es.\+edu.\+ull.\+esit.\+algorithm.\+Search\+Algorithm Interface Reference}
+\hypertarget{interfacees_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_search_algorithm}{}\label{interfacees_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_search_algorithm}\index{es.edu.ull.esit.algorithm.SearchAlgorithm@{es.edu.ull.esit.algorithm.SearchAlgorithm}}
+
+
+Inheritance diagram for es.\+edu.\+ull.\+esit.\+algorithm.\+Search\+Algorithm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interfacees_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_search_algorithm__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interfacees_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_search_algorithm_aeb2903f90bc54d3000643a5bd1516188}{search}} (\mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}} start, \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}} end, int graph\+Width, int graph\+Height, int search\+Time)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Strategy interface for pathfinding algorithms. Implementations of this interface provide different search strategies for finding paths in a maze grid. 
+
+\label{doc-func-members}
+\Hypertarget{interfacees_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_search_algorithm_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfacees_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_search_algorithm_aeb2903f90bc54d3000643a5bd1516188}\index{es.edu.ull.esit.algorithm.SearchAlgorithm@{es.edu.ull.esit.algorithm.SearchAlgorithm}!search@{search}}
+\index{search@{search}!es.edu.ull.esit.algorithm.SearchAlgorithm@{es.edu.ull.esit.algorithm.SearchAlgorithm}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily \label{interfacees_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_search_algorithm_aeb2903f90bc54d3000643a5bd1516188} 
+void es.\+edu.\+ull.\+esit.\+algorithm.\+Search\+Algorithm.\+search (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}}}]{start}{, }\item[{\mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}}}]{end}{, }\item[{int}]{graph\+Width}{, }\item[{int}]{graph\+Height}{, }\item[{int}]{search\+Time}{}\end{DoxyParamCaption})}
+
+Performs the search algorithm to find a path from start to end.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & The starting node \\
+\hline
+{\em end} & The target/end node \\
+\hline
+{\em graph\+Width} & The width of the grid \\
+\hline
+{\em graph\+Height} & The height of the grid \\
+\hline
+{\em search\+Time} & The delay time in milliseconds for visualization \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_astar_algorithm_ade299a28841e5332a7148fa24181c49d}{es.\+edu.\+ull.\+esit.\+algorithm.\+Astar\+Algorithm}}, \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_bfs_algorithm_a9f98c55e0e8295ddb388c7a50777c394}{es.\+edu.\+ull.\+esit.\+algorithm.\+Bfs\+Algorithm}}, \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_bidirectional_search_algorithm_a82862ebb976b98a23caa0870b182e4b4}{es.\+edu.\+ull.\+esit.\+algorithm.\+Bidirectional\+Search\+Algorithm}}, \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_dfs_algorithm_ae578aa7db98ca46defdaf3476557e657}{es.\+edu.\+ull.\+esit.\+algorithm.\+Dfs\+Algorithm}}, \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_dijkstra_algorithm_afbf380ccf5a794c4f406192becb936c9}{es.\+edu.\+ull.\+esit.\+algorithm.\+Dijkstra\+Algorithm}}, and \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_greedy_best_first_algorithm_aef23aba7ff6c64a0255d2277254557b5}{es.\+edu.\+ull.\+esit.\+algorithm.\+Greedy\+Best\+First\+Algorithm}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+PR/src/main/java/es/edu/ull/esit/algorithm/Search\+Algorithm.\+java\end{DoxyCompactItemize}

@@ -1,0 +1,85 @@
+\doxysection{es.\+edu.\+ull.\+esit.\+algorithm.\+Abstract\+Search\+Algorithm Class Reference}
+\hypertarget{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_abstract_search_algorithm}{}\label{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_abstract_search_algorithm}\index{es.edu.ull.esit.algorithm.AbstractSearchAlgorithm@{es.edu.ull.esit.algorithm.AbstractSearchAlgorithm}}
+
+
+Inheritance diagram for es.\+edu.\+ull.\+esit.\+algorithm.\+Abstract\+Search\+Algorithm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_abstract_search_algorithm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for es.\+edu.\+ull.\+esit.\+algorithm.\+Abstract\+Search\+Algorithm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_abstract_search_algorithm__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_abstract_search_algorithm_afd330b0727e8b9c372078d2f1ee0257e}{shortpath}} (\mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}}\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} prev, \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}} end, int search\+Time)
+\item 
+\mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}} \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_abstract_search_algorithm_abcbd97037beff93637482c24ba491381}{get\+Least\+Heuristic}} (List$<$ \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}} $>$ nodes, \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}} end, \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}} start)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfacees_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_search_algorithm}{es.\+edu.\+ull.\+esit.\+algorithm.\+Search\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interfacees_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_search_algorithm_aeb2903f90bc54d3000643a5bd1516188}{search}} (\mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}} start, \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}} end, int graph\+Width, int graph\+Height, int search\+Time)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for pathfinding algorithms. Provides common helper methods used by various search algorithms. 
+
+\label{doc-func-members}
+\Hypertarget{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_abstract_search_algorithm_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_abstract_search_algorithm_abcbd97037beff93637482c24ba491381}\index{es.edu.ull.esit.algorithm.AbstractSearchAlgorithm@{es.edu.ull.esit.algorithm.AbstractSearchAlgorithm}!getLeastHeuristic@{getLeastHeuristic}}
+\index{getLeastHeuristic@{getLeastHeuristic}!es.edu.ull.esit.algorithm.AbstractSearchAlgorithm@{es.edu.ull.esit.algorithm.AbstractSearchAlgorithm}}
+\doxysubsubsection{\texorpdfstring{getLeastHeuristic()}{getLeastHeuristic()}}
+{\footnotesize\ttfamily \label{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_abstract_search_algorithm_abcbd97037beff93637482c24ba491381} 
+\mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}} es.\+edu.\+ull.\+esit.\+algorithm.\+Abstract\+Search\+Algorithm.\+get\+Least\+Heuristic (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}} $>$}]{nodes}{, }\item[{\mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}}}]{end}{, }\item[{\mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}}}]{start}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Selects the node with the lowest heuristic cost from a list. Calculates both the heuristic distance to the end and distance from the start.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nodes} & The list of nodes to evaluate \\
+\hline
+{\em end} & The target/end node \\
+\hline
+{\em start} & The starting node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The node with the lowest total heuristic cost 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_abstract_search_algorithm_afd330b0727e8b9c372078d2f1ee0257e}\index{es.edu.ull.esit.algorithm.AbstractSearchAlgorithm@{es.edu.ull.esit.algorithm.AbstractSearchAlgorithm}!shortpath@{shortpath}}
+\index{shortpath@{shortpath}!es.edu.ull.esit.algorithm.AbstractSearchAlgorithm@{es.edu.ull.esit.algorithm.AbstractSearchAlgorithm}}
+\doxysubsubsection{\texorpdfstring{shortpath()}{shortpath()}}
+{\footnotesize\ttfamily \label{classes_1_1edu_1_1ull_1_1esit_1_1algorithm_1_1_abstract_search_algorithm_afd330b0727e8b9c372078d2f1ee0257e} 
+void es.\+edu.\+ull.\+esit.\+algorithm.\+Abstract\+Search\+Algorithm.\+shortpath (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}}}]{prev}{\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }\item[{\mbox{\hyperlink{classes_1_1edu_1_1ull_1_1esit_1_1_node}{Node}}}]{end}{, }\item[{int}]{search\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Reconstructs and displays the shortest path from start to end. Backtracks from the end node using the previous node array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em prev} & 2D array storing the previous node for each position \\
+\hline
+{\em end} & The target/end node \\
+\hline
+{\em search\+Time} & The delay time in milliseconds for visualization \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+PR/src/main/java/es/edu/ull/esit/algorithm/Abstract\+Search\+Algorithm.\+java\end{DoxyCompactItemize}
