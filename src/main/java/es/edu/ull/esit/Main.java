@@ -258,7 +258,8 @@ public class Main extends Canvas implements Runnable, MouseListener {
 	 */
 	public void run() {
 		init();
-		while (true) {
+        boolean firstRun = true;
+		while (firstRun) {
 			// check
 			BufferStrategy bs = getBufferStrategy(); // check
 			if (bs == null) {
@@ -275,6 +276,7 @@ public class Main extends Canvas implements Runnable, MouseListener {
 			} catch (InterruptedException e) {
 				Thread.currentThread().interrupt();
 				e.printStackTrace();
+                firstRun = false;
 			}
 		}
 
