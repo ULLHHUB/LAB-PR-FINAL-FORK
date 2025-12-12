@@ -272,7 +272,8 @@ public class Main extends Canvas implements Runnable, MouseListener {
 			bs.show();
 			try {
 				Thread.sleep(1);
-			} catch (Exception e) {
+			} catch (InterruptedException e) {
+				Thread.currentThread().interrupt();
 				e.printStackTrace();
 			}
 		}
@@ -349,23 +350,23 @@ public class Main extends Canvas implements Runnable, MouseListener {
 		if (option == JFileChooser.APPROVE_OPTION) {
 			File file = fileChooser.getSelectedFile();
 			String ext = file.getAbsolutePath().endsWith(".maze") ? "" : ".maze";
-			BufferedWriter outputWriter = new BufferedWriter(new FileWriter(file.getAbsolutePath() + ext));
-			for (int i = 0; i < nodeList.length; i++) {
-				for (int j = 0; j < nodeList[i].length; j++) {
-					if (nodeList[i][j].isWall()) {
-						outputWriter.write("1");
-					} else if (nodeList[i][j].isStart()) {
-						outputWriter.write("2");
-					} else if (nodeList[i][j].isEnd()) {
-						outputWriter.write("3");
-					} else {
-						outputWriter.write("0");
+			try (BufferedWriter outputWriter = new BufferedWriter(new FileWriter(file.getAbsolutePath() + ext))) {
+				for (int i = 0; i < nodeList.length; i++) {
+					for (int j = 0; j < nodeList[i].length; j++) {
+						if (nodeList[i][j].isWall()) {
+							outputWriter.write("1");
+						} else if (nodeList[i][j].isStart()) {
+							outputWriter.write("2");
+						} else if (nodeList[i][j].isEnd()) {
+							outputWriter.write("3");
+						} else {
+							outputWriter.write("0");
+						}
 					}
+					outputWriter.newLine();
 				}
-				outputWriter.newLine();
+				outputWriter.flush();
 			}
-			outputWriter.flush();
-			outputWriter.close();
 		}
 
 	}
@@ -381,36 +382,36 @@ public class Main extends Canvas implements Runnable, MouseListener {
 		int option = fileChooser.showOpenDialog(frame);
 		if (option == JFileChooser.APPROVE_OPTION) {
 			File file = fileChooser.getSelectedFile();
-			BufferedReader reader = new BufferedReader(new FileReader(file.getAbsolutePath()));
-			String line = null;
-			for (int i = 0; i < NODES_WIDTH; i++) {
-				line = reader.readLine();
-				for (int j = 0; j < NODES_HEIGHT; j++) {
-					
-					//nodeList[i][j].setColor(Color.BLACK);
-					int nodeType = Character.getNumericValue(line.charAt(j));
-					System.out.println("node is " + nodeType);
-					switch (nodeType) {
-					case 0:
-						nodeList[i][j].setColor(Color.LIGHT_GRAY);
-						break;
-					case 1:
-						nodeList[i][j].setColor(Color.BLACK);
-						break;
+			try (BufferedReader reader = new BufferedReader(new FileReader(file.getAbsolutePath()))) {
+				String line = null;
+				for (int i = 0; i < NODES_WIDTH; i++) {
+					line = reader.readLine();
+					for (int j = 0; j < NODES_HEIGHT; j++) {
+						
+						//nodeList[i][j].setColor(Color.BLACK);
+						int nodeType = Character.getNumericValue(line.charAt(j));
+						System.out.println("node is " + nodeType);
+						switch (nodeType) {
+						case 0:
+							nodeList[i][j].setColor(Color.LIGHT_GRAY);
+							break;
+						case 1:
+							nodeList[i][j].setColor(Color.BLACK);
+							break;
 
-					case 2:
-						nodeList[i][j].setColor(Color.GREEN);
-						start = nodeList[i][j];
-						break;
-					case 3:
-						nodeList[i][j].setColor(Color.RED);
-						target = nodeList[i][j];
-						break;
+						case 2:
+							nodeList[i][j].setColor(Color.GREEN);
+							start = nodeList[i][j];
+							break;
+						case 3:
+							nodeList[i][j].setColor(Color.RED);
+							target = nodeList[i][j];
+							break;
+						}
 					}
-				}
 
+				}
 			}
-			reader.close();
 			// System.out.println(stringMaze);
 		}
 	}

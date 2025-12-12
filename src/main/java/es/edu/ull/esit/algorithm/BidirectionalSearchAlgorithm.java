@@ -36,7 +36,8 @@ public class BidirectionalSearchAlgorithm extends AbstractSearchAlgorithm {
             nodeStart.setColor(Color.ORANGE);
             try {
                 Thread.sleep(searchTime);
-            } catch (Exception e) {
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
                 e.printStackTrace();
             }
             nodeStart.setColor(Color.BLUE);
@@ -61,7 +62,8 @@ public class BidirectionalSearchAlgorithm extends AbstractSearchAlgorithm {
             nodeEnd.setColor(Color.ORANGE);
             try {
                 Thread.sleep(searchTime);
-            } catch (Exception e) {
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
                 e.printStackTrace();
             }
             nodeEnd.setColor(Color.BLUE);

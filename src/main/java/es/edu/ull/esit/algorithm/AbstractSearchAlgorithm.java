@@ -28,7 +28,8 @@ public abstract class AbstractSearchAlgorithm implements SearchAlgorithm {
             }
             try {
                 Thread.sleep(searchTime);
-            } catch (Exception e) {
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
                 e.printStackTrace();
             }
         }

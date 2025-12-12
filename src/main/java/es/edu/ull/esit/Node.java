@@ -66,8 +66,8 @@ public class Node {
 	 * @return The Euclidean distance between the nodes
 	 */
 	public static double distance(Node a, Node b) {
-		double x = Math.pow(a.Xpos - b.Xpos, 2);
-		double y = Math.pow(a.Ypos - b.Ypos, 2);
+		double x = Math.pow((double) a.Xpos - b.Xpos, 2);
+		double y = Math.pow((double) a.Ypos - b.Ypos, 2);
 
 		return Math.sqrt(x + y);
 	}

@@ -29,7 +29,8 @@ public class DfsAlgorithm extends AbstractSearchAlgorithm {
                 curNode.setColor(Color.ORANGE);
                 try {
                     Thread.sleep(searchTime);
-                } catch (Exception e) {
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
                     e.printStackTrace();
                 }
                 curNode.setColor(Color.BLUE);
