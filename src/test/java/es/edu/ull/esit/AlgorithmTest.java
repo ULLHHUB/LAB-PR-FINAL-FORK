@@ -183,4 +183,76 @@ class AlgorithmTest {
         }
         // If we reach here without exception, the catch block in Algorithm/AbstractSearchAlgorithm handled it
     }
+
+    @Test
+    void testBidirectionalSearchMeeting() {
+        BidirectionalSearchAlgorithm bi = new BidirectionalSearchAlgorithm();
+        // Use nodes close to each other to ensure meeting point logic is triggered
+        Node startNode = grid[0][0];
+        Node endNode = grid[0][2]; 
+        
+        startNode.setColor(java.awt.Color.GREEN);
+        endNode.setColor(java.awt.Color.RED);
+        
+        bi.search(startNode, endNode, WIDTH, HEIGHT, 0);
+        
+        // The meeting point should be grid[0][1] and colored CYAN
+        assertEquals(java.awt.Color.CYAN, grid[0][1].getColor());
+    }
+
+    @Test
+    void testBidirectionalSearchNoPath() {
+        BidirectionalSearchAlgorithm bi = new BidirectionalSearchAlgorithm();
+        Node startNode = grid[0][0];
+        Node endNode = grid[9][9];
+        
+        // Block start
+        for(Node n : startNode.getNeighbours()) {
+            n.setAsWall();
+        }
+        
+        bi.search(startNode, endNode, WIDTH, HEIGHT, 0);
+        // Should finish without error and without finding path
+        assertNotEquals(java.awt.Color.MAGENTA, endNode.getColor());
+    }
+
+    @Test
+    void testDfsAlgorithmCoverage() {
+        DfsAlgorithm dfs = new DfsAlgorithm();
+        // Clear default end node to avoid confusion
+        end.setColor(java.awt.Color.LIGHT_GRAY);
+        
+        Node startNode = grid[0][0];
+        Node endNode = grid[2][2];
+        
+        startNode.setColor(java.awt.Color.GREEN);
+        endNode.setColor(java.awt.Color.RED);
+        
+        // Pre-mark a neighbor as searched to test the "if (!adjacent.isSearched())" branch
+        grid[0][1].setColor(java.awt.Color.BLUE); 
+        
+        dfs.search(startNode, endNode, WIDTH, HEIGHT, 0);
+        
+        assertEquals(java.awt.Color.MAGENTA, endNode.getColor());
+    }
+
+    @Test
+    void testGreedyBestFirstAlgorithmCoverage() {
+        GreedyBestFirstAlgorithm greedy = new GreedyBestFirstAlgorithm();
+        // Clear default end node to avoid confusion
+        end.setColor(java.awt.Color.LIGHT_GRAY);
+        
+        Node startNode = grid[0][0];
+        Node endNode = grid[2][2];
+        
+        startNode.setColor(java.awt.Color.GREEN);
+        endNode.setColor(java.awt.Color.RED);
+        
+        // Pre-mark a neighbor as searched to test the "if (!adjacent.isSearched() ...)" branch
+        grid[0][1].setColor(java.awt.Color.BLUE);
+        
+        greedy.search(startNode, endNode, WIDTH, HEIGHT, 0);
+        
+        assertEquals(java.awt.Color.MAGENTA, endNode.getColor());
+    }
 }

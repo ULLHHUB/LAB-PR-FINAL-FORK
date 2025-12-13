@@ -580,4 +580,49 @@ class MainTest {
         // 3. Invalid Too Large
         assertNull(mainApp.getNodeAt(10000, 10000));
     }
+
+    @Test
+    void testMainInvalidMazeRuns() throws Exception {
+        // Set start/target to null to make maze invalid
+        Field startField = Main.class.getDeclaredField("start");
+        startField.setAccessible(true);
+        startField.set(null, null);
+        
+        Field targetField = Main.class.getDeclaredField("target");
+        targetField.setAccessible(true);
+        targetField.set(null, null);
+        
+        // Call run methods - they should print/show dialog but not crash
+        mainApp.runBfs();
+        mainApp.runAstar();
+        mainApp.runDijkstra();
+        mainApp.runGreedyBfs();
+        mainApp.runBidirectional();
+        
+        // For runDfs, catch HeadlessException if it occurs due to JOptionPane
+        try {
+            mainApp.runDfs();
+        } catch (java.awt.HeadlessException e) {
+            // Expected in CI
+        } catch (Exception e) {
+            // Ignore
+        }
+    }
+
+    @Test
+    void testGenerateMazeLogic() throws NoSuchFieldException, IllegalAccessException {
+        mainApp.generateMazeLogic();
+        // Verify walls were generated
+        Field nodeListField = Main.class.getDeclaredField("nodeList");
+        nodeListField.setAccessible(true);
+        Node[][] nodeList = (Node[][]) nodeListField.get(mainApp);
+        
+        boolean hasWalls = false;
+        for(Node[] row : nodeList) {
+            for(Node n : row) {
+                if(n.isWall()) hasWalls = true;
+            }
+        }
+        assertTrue(hasWalls);
+    }
 }
