@@ -27,10 +27,15 @@ jobs:
         shell: bash
         run: mvn clean verify -Ddependency-check.skip=true -Dfile.encoding=UTF-8 -Djava.awt.headless=true
 
+      - name: Generate HTML Report
+        if: always()
+        shell: bash
+        run: mvn surefire-report:report-only -Ddependency-check.skip=true
+
       - name: Upload Test Report
         if: always() # Se ejecuta incluso si fallan los tests
         uses: actions/upload-artifact@v4
         with:
-          name: test-report-${{ matrix.os }}
-          path: target/surefire-reports/
+          name: test-report-html-${{ matrix.os }}
+          path: target/site/
 
