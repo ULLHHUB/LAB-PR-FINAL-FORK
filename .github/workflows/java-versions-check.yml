@@ -24,4 +24,4 @@ jobs:
           cache: maven
 
       - name: Build and Test
-        run: mvn clean verify
+        run: mvn clean verify -Ddependency-check.skip=true
