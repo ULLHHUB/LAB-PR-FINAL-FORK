@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false # Continúa con otras versiones aunque una falle
       matrix:
-        java: [8, 11, 17, 21] # Probamos LTS y la versión base definida en pom.xml
+        java: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23] # Probamos todas las versiones desde la 8
 
     steps:
       - name: Checkout repository
