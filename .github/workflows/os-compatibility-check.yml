@@ -24,4 +24,5 @@ jobs:
           cache: maven
 
       - name: Build and Test
-        run: mvn clean verify -Ddependency-check.skip=true
+        shell: bash
+        run: mvn clean verify -Ddependency-check.skip=true -Dfile.encoding=UTF-8
