@@ -26,3 +26,11 @@ jobs:
       - name: Build and Test
         shell: bash
         run: mvn clean verify -Ddependency-check.skip=true -Dfile.encoding=UTF-8 -Djava.awt.headless=true
+
+      - name: Upload Test Report
+        if: always() # Se ejecuta incluso si fallan los tests
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report-${{ matrix.os }}
+          path: target/surefire-reports/
+
